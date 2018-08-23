@@ -34,8 +34,9 @@ class App extends React.Component {
   };
   // template/DOM structure
   render() {
+    // this is not html, so we can't use 'class', use 'className'
     return (
-      <div>
+      <div className="app-content">
         <p>My name is {this.state.name}</p>
         <button onClick={this.handleClick}>Click me</button>
         <button onClick={this.getState}>Get State</button>
@@ -45,6 +46,20 @@ class App extends React.Component {
   }
 }
 ReactDOM.render(<App />, document.querySelector('#app'));
+```
+
+### Forms
+
+We should use `<form onSubmit={this.handleSubmit}>` to handle the submit click and enter key, instead of the 'onClick' method in the submit button.
+
+also don't forget to prevent the default browser 'refresh' page after submitting:
+
+```js
+handleSubmit = e => {
+  // prevent the page refresh after user uses enter or click
+  e.preventDefault();
+  console.log(`form submited by ${this.state.name}`);
+};
 ```
 
 ---

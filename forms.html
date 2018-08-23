@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <title>React CDN</title>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script type="text/babel">
+    class App extends React.Component {
+      state = {
+        name: 'Carlos',
+        age: 36
+      }
+      handleChange = e => {
+        this.setState({
+          name: e.target.value
+        })
+      }
+      handleSubmit = e => {
+        // prevent the page refresh after user uses enter or click
+        e.preventDefault();
+        console.log(`form submited by ${this.state.name}`);
+      }
+      render(){
+        return (
+          <div className='app-content'>
+            <p>My name is { this.state.name }</p>
+            <p>My age is { this.state.age }</p>
+            <form onSubmit={this.handleSubmit}>
+              <input type='text' onChange={this.handleChange}/>
+              <button>Submit</button>
+            </form>
+          </div>
+        )
+      }
+    }
+    ReactDOM.render(<App/>, document.querySelector('#app'));
+  </script>
+</body>
+
+</html>
