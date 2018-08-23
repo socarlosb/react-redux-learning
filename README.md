@@ -14,7 +14,8 @@ Last modification: `2018/08/23`
 class App extends React.Component {
   // data
   state = {
-    name: 'Carlos'
+    name: 'Carlos',
+    age: 36
   };
   // functions/methods
   handleClick(e) {
