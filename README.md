@@ -81,4 +81,24 @@ UI Components (aka stateless)
 So... you can create UI components that use Container components to get data!
 _So this is like a website at a macro view, you have the 'server component' and the 'client component'... fun idea!_
 
+### Conditions
+
+standard:
+
+```js
+if (age < 20) {
+  return <div>{age}</div>;
+} else {
+  return null;
+}
+```
+
+itinerary operator:
+
+`condition ? (if true) : (if false)`
+
+```js
+age < 20 ? <div>{age}</div> : null;
+```
+
 ---
