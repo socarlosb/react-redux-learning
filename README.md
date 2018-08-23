@@ -62,4 +62,23 @@ handleSubmit = e => {
 };
 ```
 
+### Container vs UI Components
+
+Container Components (aka class based)
+
+- contain state
+- contain lifecycle hooks
+- not concerned with ui
+- use classes to create
+
+UI Components (aka stateless)
+
+- Don't contain state
+- Receive data from props
+- only concerned with UI
+- use function to create
+
+So... you can create UI components that use Container components to get data!
+_So this is like a website at a macro view, you have the 'server component' and the 'client component'... fun idea!_
+
 ---
