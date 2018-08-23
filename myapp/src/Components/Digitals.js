@@ -1,7 +1,8 @@
 import React from 'react';
+import '../Digitals.css';
 
 // serverless component example (UI component)
-const Digitals = ({ digitals }) => {
+const Digitals = ({ digitals, deleteDigital }) => {
   // console.log(this.props);
   // const { digitals } = props;
   const digitalList = digitals.map(digital => {
@@ -11,6 +12,13 @@ const Digitals = ({ digitals }) => {
           <div>Name: {digital.name}</div>
           <div>Age: {digital.age}</div>
           <div>City: {digital.city}</div>
+          <button
+            onClick={() => {
+              deleteDigital(digital.id);
+            }}
+          >
+            Delete Digital
+          </button>
         </div>
       );
     } else {

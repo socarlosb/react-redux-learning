@@ -102,3 +102,26 @@ age < 20 ? <div>{age}</div> : null;
 ```
 
 ---
+
+spread operator (let's you create a copy of an array, helps to update a state)
+
+```js
+addDigital = digital => {
+  digital.id = Math.random();
+  // create a copy of the present state, plus add the new 'digital' object
+  let newDigitals = [...this.state.digitals, digital];
+  this.setState({
+    digitals: newDigitals
+  });
+};
+```
+
+### css
+
+seams to act on all the page!?
+
+[learn more](https://blog.pusher.com/css-modules-react/)
+
+## react lifecycle
+
+[check this link](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) for react inner methods.
