@@ -122,6 +122,39 @@ seams to act on all the page!?
 
 [learn more](https://blog.pusher.com/css-modules-react/)
 
-## react lifecycle
+### react lifecycle
 
 [check this link](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) for react inner methods.
+
+### app example
+
+Check folder `/do-me`!
+
+---
+
+### React Router
+
+Basically it's a middle man between the client and the server, it intercept the requests to the server and update the components lists and states accordantly.
+
+App example folder `/poketimes`
+
+Just need to import `BrowserRouter` from the `react-router-dom` module and put all your stuff in there!
+Use `Route` to create a link to a specific component, very _ExpressJS_ look alike!
+
+```js
+<BrowserRouter>
+  <div className="App">
+    <Navbar />
+    <Route exact path="/" component={Home} />
+    <Route path="/about" component={About} />
+    <Route path="/contact" component={Contact} />
+  </div>
+</BrowserRouter>
+```
+
+> Link vs NavLink
+
+Use `Link` instead of `<a>` to call components without refreshing the page!
+`NavLink` does the same that `Link` does and adds an **active** class to the selected link
+
+**Note: You will still see `<a>` in the DOM!**
