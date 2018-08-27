@@ -158,3 +158,7 @@ Use `Link` instead of `<a>` to call components without refreshing the page!
 `NavLink` does the same that `Link` does and adds an **active** class to the selected link
 
 **Note: You will still see `<a>` in the DOM!**
+
+### HOC (Higher order component)
+
+It's like component inception! [Review](https://www.youtube.com/watch?v=hKvV0euP3mY&index=28&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG) or search for more!
