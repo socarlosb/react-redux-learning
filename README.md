@@ -183,3 +183,44 @@ export default withRouter(Navbar);
 ```
 
 Also check `hoc/Rainbow.js` that is being used in the `/About` component, giving it "super powers"!
+
+### Adding remote data
+
+Example with _Axios_:
+
+1. install the lib with `npm install x`
+2. to use a lib the component must be a class based component
+
+> _Reminder: class component syntax_
+
+```js
+import React, { Component } from 'react';
+
+class Home extends Component {
+  render() {
+    // your component
+  }
+}
+
+export default Home;
+```
+
+3.
+
+```js
+import React, { Component } from 'react';
+import axios from 'axios';
+
+class Home extends Component {
+  componentDidMount() {
+    axios.get('url').then(res => {
+      console.log(res);
+    });
+  }
+  render() {
+    // your component
+  }
+}
+
+export default Home;
+```
