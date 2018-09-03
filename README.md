@@ -162,3 +162,24 @@ Use `Link` instead of `<a>` to call components without refreshing the page!
 ### HOC (Higher order component)
 
 It's like component inception! [Review](https://www.youtube.com/watch?v=hKvV0euP3mY&index=28&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG) or search for more!
+
+### Higher Order Component
+
+Import your HOC component and encapsulate the new component, treat the HOC like a function, passing a component as an argument.
+
+```js
+import { withRouter } from 'react-router-dom';
+
+const Navbar = props => {
+  console.log(props); // we can access this now with 'withRouter'
+  return (
+    <nav className="nav-wrapper red darken-3">
+      <NavLink to="/about">About</NavLink>
+    </nav>
+  );
+};
+
+export default withRouter(Navbar);
+```
+
+Also check `hoc/Rainbow.js` that is being used in the `/About` component, giving it "super powers"!
