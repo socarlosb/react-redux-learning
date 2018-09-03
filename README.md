@@ -8,7 +8,7 @@ Last modification: `2018/08/23`
 
 [React Dev Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) for Chrome show states and props of a react component.
 
-### Standard React structure
+## Standard React structure
 
 ```js
 class App extends React.Component {
@@ -48,7 +48,7 @@ class App extends React.Component {
 ReactDOM.render(<App />, document.querySelector('#app'));
 ```
 
-### Forms
+## Forms
 
 We should use `<form onSubmit={this.handleSubmit}>` to handle the submit click and enter key, instead of the 'onClick' method in the submit button.
 
@@ -62,7 +62,7 @@ handleSubmit = e => {
 };
 ```
 
-### Container vs UI Components
+## Container vs UI Components
 
 Container Components (aka class based)
 
@@ -81,7 +81,7 @@ UI Components (aka stateless)
 So... you can create UI components that use Container components to get data!
 _So this is like a website at a macro view, you have the 'server component' and the 'client component'... fun idea!_
 
-### Conditions
+## Conditions
 
 standard:
 
@@ -116,23 +116,23 @@ addDigital = digital => {
 };
 ```
 
-### css
+## css
 
 seams to act on all the page!?
 
 [learn more](https://blog.pusher.com/css-modules-react/)
 
-### react lifecycle
+## react lifecycle
 
 [check this link](http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/) for react inner methods.
 
-### app example
+## app example
 
 Check folder `/do-me`!
 
 ---
 
-### React Router
+## React Router
 
 Basically it's a middle man between the client and the server, it intercept the requests to the server and update the components lists and states accordantly.
 
@@ -159,11 +159,11 @@ Use `Link` instead of `<a>` to call components without refreshing the page!
 
 **Note: You will still see `<a>` in the DOM!**
 
-### HOC (Higher order component)
+## HOC (Higher order component)
 
 It's like component inception! [Review](https://www.youtube.com/watch?v=hKvV0euP3mY&index=28&list=PL4cUxeGkcC9ij8CfkAY2RAGb-tmkNwQHG) or search for more!
 
-### Higher Order Component
+## Higher Order Component
 
 Import your HOC component and encapsulate the new component, treat the HOC like a function, passing a component as an argument.
 
@@ -184,7 +184,7 @@ export default withRouter(Navbar);
 
 Also check `hoc/Rainbow.js` that is being used in the `/About` component, giving it "super powers"!
 
-### Adding remote data
+## Adding remote data
 
 Example with _Axios_:
 
@@ -224,3 +224,22 @@ class Home extends Component {
 
 export default Home;
 ```
+
+## Route Parameters
+
+To grab the href params use:
+
+```js
+// http://mysite/321
+componentDidMount() {
+  let id = this.props.match.params.post_id;
+  this.setState({
+      id
+    });
+}
+// returns: 321
+```
+
+## Switch
+
+For a better matching control of our url link we encapsulate our `<Links>` into a `Switch`, get ut by `import { Switch } from 'react-router-dom';`
