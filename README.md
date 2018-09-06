@@ -256,4 +256,9 @@ It's a global state(aka Central State) in a js object!
 
 Component -> Action of change (optional: payload) -> Reducer (it updates the Central State)
 
-Examples in [codepen](https://codepen.io/socarlosb/pen/rZmzOE?editors=0011)
+![redux diagram, by TheNetNinja](./redux_diagram.png)
+_Image credits by [The Net Ninja](https://www.youtube.com/thenetninja)_
+
+> Examples in [codepen](https://codepen.io/socarlosb/pen/rZmzOE?editors=0011)
+
+_Codepen redux code in [codepen_redux_code.js](./codepen_redux_code.js)_
