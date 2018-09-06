@@ -243,3 +243,17 @@ componentDidMount() {
 ## Switch
 
 For a better matching control of our url link we encapsulate our `<Links>` into a `Switch`, get ut by `import { Switch } from 'react-router-dom';`
+
+## Images
+
+Just import them as normal js modules `import Sample from '../sample.png';`
+
+## Redux 👀
+
+It's a global state(aka Central State) in a js object!
+
+> Workflow
+
+Component -> Action of change (optional: payload) -> Reducer (it updates the Central State)
+
+Examples in [codepen](https://codepen.io/socarlosb/pen/rZmzOE?editors=0011)
