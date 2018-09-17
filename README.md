@@ -12,38 +12,38 @@ Last modification: `2018/08/23`
 
 ```js
 class App extends React.Component {
-  // data
-  state = {
-    name: 'Carlos',
-    age: 36
-  };
-  // functions/methods
-  handleClick(e) {
-    console.log(e.target);
-  }
-  // change the method to an arrow function to access the component this.state
-  getState = e => {
-    console.log(this.state);
-  };
-  // use setState to update your content state
-  getOlder = e => {
-    const newDate = this.state.age + 1;
-    this.setState({
-      age: newDate
-    });
-  };
-  // template/DOM structure
-  render() {
-    // this is not html, so we can't use 'class', use 'className'
-    return (
-      <div className="app-content">
-        <p>My name is {this.state.name}</p>
-        <button onClick={this.handleClick}>Click me</button>
-        <button onClick={this.getState}>Get State</button>
-        <button onClick={this.getOlder}>Age me</button>
-      </div>
-    );
-  }
+	// data
+	state = {
+		name: 'Carlos',
+		age: 36
+	};
+	// functions/methods
+	handleClick(e) {
+		console.log(e.target);
+	}
+	// change the method to an arrow function to access the component this.state
+	getState = (e) => {
+		console.log(this.state);
+	};
+	// use setState to update your content state
+	getOlder = (e) => {
+		const newDate = this.state.age + 1;
+		this.setState({
+			age: newDate
+		});
+	};
+	// template/DOM structure
+	render() {
+		// this is not html, so we can't use 'class', use 'className'
+		return (
+			<div className="app-content">
+				<p>My name is {this.state.name}</p>
+				<button onClick={this.handleClick}>Click me</button>
+				<button onClick={this.getState}>Get State</button>
+				<button onClick={this.getOlder}>Age me</button>
+			</div>
+		);
+	}
 }
 ReactDOM.render(<App />, document.querySelector('#app'));
 ```
@@ -55,10 +55,10 @@ We should use `<form onSubmit={this.handleSubmit}>` to handle the submit click a
 also don't forget to prevent the default browser 'refresh' page after submitting:
 
 ```js
-handleSubmit = e => {
-  // prevent the page refresh after user uses enter or click
-  e.preventDefault();
-  console.log(`form submited by ${this.state.name}`);
+handleSubmit = (e) => {
+	// prevent the page refresh after user uses enter or click
+	e.preventDefault();
+	console.log(`form submited by ${this.state.name}`);
 };
 ```
 
@@ -87,9 +87,9 @@ standard:
 
 ```js
 if (age < 20) {
-  return <div>{age}</div>;
+	return <div>{age}</div>;
 } else {
-  return null;
+	return null;
 }
 ```
 
@@ -106,13 +106,13 @@ age < 20 ? <div>{age}</div> : null;
 spread operator (let's you create a copy of an array, helps to update a state)
 
 ```js
-addDigital = digital => {
-  digital.id = Math.random();
-  // create a copy of the present state, plus add the new 'digital' object
-  let newDigitals = [...this.state.digitals, digital];
-  this.setState({
-    digitals: newDigitals
-  });
+addDigital = (digital) => {
+	digital.id = Math.random();
+	// create a copy of the present state, plus add the new 'digital' object
+	let newDigitals = [...this.state.digitals, digital];
+	this.setState({
+		digitals: newDigitals
+	});
 };
 ```
 
@@ -143,12 +143,12 @@ Use `Route` to create a link to a specific component, very _ExpressJS_ look alik
 
 ```js
 <BrowserRouter>
-  <div className="App">
-    <Navbar />
-    <Route exact path="/" component={Home} />
-    <Route path="/about" component={About} />
-    <Route path="/contact" component={Contact} />
-  </div>
+	<div className="App">
+		<Navbar />
+		<Route exact path="/" component={Home} />
+		<Route path="/about" component={About} />
+		<Route path="/contact" component={Contact} />
+	</div>
 </BrowserRouter>
 ```
 
@@ -170,13 +170,13 @@ Import your HOC component and encapsulate the new component, treat the HOC like 
 ```js
 import { withRouter } from 'react-router-dom';
 
-const Navbar = props => {
-  console.log(props); // we can access this now with 'withRouter'
-  return (
-    <nav className="nav-wrapper red darken-3">
-      <NavLink to="/about">About</NavLink>
-    </nav>
-  );
+const Navbar = (props) => {
+	console.log(props); // we can access this now with 'withRouter'
+	return (
+		<nav className="nav-wrapper red darken-3">
+			<NavLink to="/about">About</NavLink>
+		</nav>
+	);
 };
 
 export default withRouter(Navbar);
@@ -197,9 +197,9 @@ Example with _Axios_:
 import React, { Component } from 'react';
 
 class Home extends Component {
-  render() {
-    // your component
-  }
+	render() {
+		// your component
+	}
 }
 
 export default Home;
@@ -212,14 +212,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 class Home extends Component {
-  componentDidMount() {
-    axios.get('url').then(res => {
-      console.log(res);
-    });
-  }
-  render() {
-    // your component
-  }
+	componentDidMount() {
+		axios.get('url').then((res) => {
+			console.log(res);
+		});
+	}
+	render() {
+		// your component
+	}
 }
 
 export default Home;
@@ -262,3 +262,9 @@ _Image credits by [The Net Ninja](https://www.youtube.com/thenetninja)_
 > Examples in [codepen](https://codepen.io/socarlosb/pen/rZmzOE?editors=0011)
 
 _Codepen redux code in [codepen_redux_code.js](./codepen_redux_code.js)_
+
+To better organize our dispatch actions you should separate your actions (check `./src/actions/postActions.js`).
+
+---
+
+Next a React, Redux & Firebase [App](https://www.youtube.com/watch?v=Oi4v5uxTY5o)
